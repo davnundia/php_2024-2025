@@ -20,10 +20,10 @@
 <body>
 <?php
         $varname = 'idioma';
-        $$varname = $idiomavar;
-        $idiomavar = isset($_GET["idiomavar"]) ? $_GET['idiomavar'] : "castellano";
+        $$varname = $languagevar;
+        $languagevar = isset($_GET["languagevar"]) ? $_GET['languagevar'] : "castellano";
 
-        if ($idiomavar === "ingles"){
+        if ($languagevar === "ingles"){
             $title = "My curriculum";
             $title_studies = "Studies";
             $CFGS = "Web application development";
@@ -31,7 +31,7 @@
             $title_knowledges = "Knowledges";
         }
 
-        if ($idiomavar === "castellano"){
+        if ($languagevar === "castellano"){
             $title = "Mi curriculum";
             $title_studies = "Estudios";
             $CFGS = "CFGS Desarrollador de Aplicaciones Web";
@@ -40,7 +40,7 @@
 
         }
 
-        if ($idiomavar === "valenciano"){
+        if ($languagevar === "valenciano"){
             $title = "Mi curriculum";
             $title_studies = "Estudios";
             $CFGS = "CFGS Desenvolupador d'Aplicacions Web";
@@ -50,9 +50,9 @@
     ?>
 
     <div id="menu">
-        <div><a href="./curriculum.php?idiomavar=castellano">Castellano</a></div>
-        <div><a href="./curriculum.php?idiomavar=valenciano">Valenciano</a></div>
-        <div><a href="./curriculum.php?idiomavar=ingles">Inglés</a></div>
+        <div><a href="./curriculum.php?languagevar=castellano">Castellano</a></div>
+        <div><a href="./curriculum.php?languagevar=valenciano">Valenciano</a></div>
+        <div><a href="./curriculum.php?languagevar=ingles">Inglés</a></div>
     </div>
     <h1> <?php echo $title ?></h1>
     <h2><?php echo $title_studies ?></h2>
