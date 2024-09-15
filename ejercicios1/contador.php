@@ -22,6 +22,7 @@
 <body>
     <h1>Creating a loop</h1>
     <h2>FOR</h2>
+    <p>This loop goes from number 1 to number 100</p>
     <div id="for_table">
         <?php
             for ($counter = 1; $counter <= 100; $counter++) {
@@ -37,6 +38,7 @@
     </div>
     
     <h2>WHILE</h2>
+    <p>This other loop goes from number 10 to number 0</p>
     <div id="while_table">
         <?php
             $end_while = 10;
