@@ -42,7 +42,7 @@
 
         if ($languagevar === "valenciano"){
             $title = "Mi curriculum";
-            $title_studies = "Estudios";
+            $title_studies = "Estudis";
             $CFGS = "CFGS Desenvolupador d'Aplicacions Web";
             $Bach = "Bachillerat";
             $title_knowledges = "Coneixements";
