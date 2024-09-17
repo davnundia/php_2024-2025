@@ -19,7 +19,7 @@
         $num_start = $_REQUEST["num_start"];
         $num_finish = $_REQUEST["num_finish"];
 
-        function cuenta($num_start, $num_finish){
+        function counter($num_start, $num_finish){
             $num_between = $num_finish - $num_start;
             for ($count=0; $count <= $num_between; $count++) { 
                 if ($count === $num_between) {
@@ -31,7 +31,7 @@
             }
         }
         if (isset($_REQUEST["num_start"]) && isset($_REQUEST["num_finish"])) {
-            cuenta($num_start, $num_finish);
+            counter($num_start, $num_finish);
         } 
 
     ?>
