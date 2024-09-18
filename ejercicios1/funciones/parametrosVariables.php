@@ -26,9 +26,6 @@
             $max = 0;
             $array = func_get_args();
             $length = func_num_args();
-            foreach ($func as $value){
-
-            }
             for ($count=0; $count < $length; $count++) {
                 if ($max < $array[$count]){
                     $max = func_get_arg($count);
