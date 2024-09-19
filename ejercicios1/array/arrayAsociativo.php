@@ -42,9 +42,9 @@
         <h2>We have:</h2>
         <p>
             <?php
-                $conteo = array_count_values($array);
-                echo "Number of M: " . ($conteo['M']) . "<br>";
-                echo "Number of F: " . ($conteo['F'] ) . "<br>";
+                $regroup = array_count_values($array);
+                echo "Number of M: " . ($regroup['M']) . "<br>";
+                echo "Number of F: " . ($regroup['F'] ) . "<br>";
             ?>
         </p>
     </div>
