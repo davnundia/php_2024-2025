@@ -6,6 +6,7 @@
     <title>matematicas</title>
 </head>
 <body>
+    <h1>Working with numbers</h1>
     <form action="" method="post">
         <label for="num">Insert a number:</label><br>
         <input type="number" name="num"><br><br>
@@ -13,7 +14,7 @@
         <input type="number" name="pos" placeholder="first position is 0"><br><br>
         <label for="quant">What quantity of digits want eliminate: </label><br>
         <input type="number" name="quant" placeholder="for the both sides"><br><br>
-        <input type="submit" name="Enviar"><br><br>
+        <input type="submit" name="Send"><br><br>
     </form>
     <?php   
         $num = $_REQUEST["num"];

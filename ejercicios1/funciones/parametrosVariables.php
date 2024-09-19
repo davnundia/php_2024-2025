@@ -6,6 +6,7 @@
     <title>parametrosVariables</title>
 </head>
 <body>
+    <h1>Find the highest number</h1>
     <form action="" method="post">
         <label for="num1">Insert a number:</label><br>
         <input type="number" name="num1" id=""><br>
@@ -13,7 +14,7 @@
         <input type="number" name="num2" id=""><br>
         <label for="num3">Insert a number:</label><br>
         <input type="number" name="num3" id=""><br>
-        <input type="submit" name="Enviar">
+        <input type="submit" name="Send">
     </form>
 
     <?php

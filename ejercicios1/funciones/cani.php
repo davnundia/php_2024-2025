@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Transform the sentence</h1>
-    <form action="" method="post">
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <label for="txt">Insert a sentence:</label><br>
         <input type="text" name="txt" id=""><br>
         <input type="submit" name="Send"><br><br>

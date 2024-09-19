@@ -15,7 +15,7 @@
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <label for="radius">Radius value:</label><br>
         <input type="number" name="radius" step="0.01" id="radius" placeholder = "example 3.5"><br>
-        <input type="submit" value="Enviar">
+        <input type="submit" value="Send">
     </form>
     
     <?php

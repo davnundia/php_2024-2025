@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>List the numbers between two numbers</h1>
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>">
+    <form action="<?php echo $_SERVER['PHP_SELF']?>">
         <label for="num_start">The count start in number:</label><br>
         <input type="number" name="num_start" id=""><br><br>
         <label for="num_finish">The count finish in number:</label><br>
