@@ -16,7 +16,42 @@
         $hour = $_REQUEST["hour"];
 
         $hour_array = explode(":",$hour);
-        print_r($hour_array);
+        function validate_hour($hour_array){
+            $count = 0;
+            foreach ($hour_array as $value){
+                if($count == 0){
+                    $check = "horas";
+                }
+                elseif($count == 1){
+                    $check = "minutos";
+                }
+                else{
+                    $check = "segundos";
+                }
+
+                if ($count == 0){
+                    if($value > 23 || $value < 0){
+                        echo "la hora no es valida porque no puede haber " . $value . " " . $check;
+                        return false;  
+                    }
+                    
+                }
+                else{
+                    if($value > 59 || $value < 0){
+                        echo "la hora no es valida porque no puede haber " . $value . " " . $check;
+                        return false;
+                    }
+                    
+                }
+                $count++;
+            }
+            return true;
+        }
+        
+        if(validate_hour($hour_array)){
+            echo "La hora " . $hour . " es valida";
+        }
+
 
     ?>
 </body>
