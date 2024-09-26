@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
     <title>casas_rurales</title>
 </head>
 <body>
@@ -27,14 +26,6 @@
         }
 
         fclose($fp);
-                            
-=======
-    <title>CasasRuralesTelefonos</title>
-</head>
-<body>
-    <?php
-        $open_file = 
->>>>>>> 77f5e42d58e23ac2af1dce48f33a8b1e88b633d5
     ?>
 </body>
 </html>
