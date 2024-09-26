@@ -13,7 +13,7 @@
         font-size: 20px;
         font-weight: bold;
     }
-    tr, h1{
+    tr, h1, h2{
         text-align: center;
     }
     table{
@@ -32,7 +32,6 @@
         </tr>
         <?php
             include 'CasasRuralesTelefonos.php';
-
             foreach($array_correct_users as $data){
                 echo "<tr>";
                     echo "<td>" . $data[0] . "</td>";
@@ -40,7 +39,8 @@
                     echo "<td>" . $data[3] . "</td>";
                     echo "<td>" . $data[9] . "</td>";
                 echo "</tr>";
-            }   
+            }
+            echo "<h2>" . "Discarted houses: "  . count($array_discard) . "</h2>";
         ?>
     </table>
 </body>

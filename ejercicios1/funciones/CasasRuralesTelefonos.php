@@ -23,6 +23,9 @@
             if(!$users[9] == ""){
                 $array_correct_users[] = $users;
             }
+            else{
+                $array_discard[] = $users;
+            }
         }
 
         fclose($fp);
