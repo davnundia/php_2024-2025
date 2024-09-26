@@ -20,11 +20,6 @@
     <?php
         $txt = $_REQUEST["txt"];
 
-        function count_words($words){
-            $total_words = count($words);
-            return $total_words;
-        }
-
         function count_letters($words){
             $total_letters = strlen($words);
             return $total_letters;
@@ -36,8 +31,8 @@
             }
         }
 
-        $words = explode(" ",$txt);
-        echo "The sentence has " . count_words($words) . " words <br>";
+        $words = str_word_count($txt, 1);
+        echo "The sentence has " . count(str_word_count($txt, 1)) . " words <br>";
         echo "The sentence has " . count_letters(implode("",$words)) . " letters <br>";
         count_letters_words($words);
 

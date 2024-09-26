@@ -421,4 +421,8 @@ id;localidad;codigo_postal;nombre;modalidad;categoria;tipo_via;via;numero;telefo
 408;Vistabella del Maestrat;12135;CASA RURAL CAL PUENTO;R;2;CM;ARRABAL DE SAN JUAN;11;964389025;;;40.29920000000004, -0.313153613999929
 413;Viver;12460;LA CASA BONITA;R;2;AV;DIPUTACION;3;964141056;sandrasanju@hotmail.com;;39.930105000000026, -0.6242169679999271
 419;Xert;12360;CASA RURAL RUSTIC SUITES;R;3;PD;INDEPENDENCIA;47;687472516;odette@casaconjacuzzi.com;http://www.casaconjacuzzi.com;40.54171000000008, 0.140162690000067
+<<<<<<< HEAD
 422;Xodos/Chodos;12134;LA PALLISSA;R;2;C;Ferreria;9;964428432;info@turistrat.es;www.turistrat.es;40.23246000000006, -0.29319931699996005
+=======
+422;Xodos/Chodos;12134;LA PALLISSA;R;2;C;Ferreria;9;964428432;info@turistrat.es;www.turistrat.es;40.23246000000006, -0.29319931699996005
+>>>>>>> 77f5e42d58e23ac2af1dce48f33a8b1e88b633d5
