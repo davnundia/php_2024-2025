@@ -8,8 +8,9 @@
 <body>
     <h1>learning about files</h1>
     <?php
-    $array_lines = [];
-    $array_lines_new = [];
+        $array_lines = [];
+        $array_lines_new = [];
+
         $fp = fopen("plantillas.csv", "r");
         while (!feof($fp)){
             $lines = fgets($fp);
@@ -23,8 +24,25 @@
 
         //remove first position of the array
         array_shift($array_lines_new);
-        print_r ($array_lines_new);
 
+        //Take only 1 team adn the number of the player
+        foreach ($array_lines_new as $value){
+            if($value[1] == "Atlético de Madrid"){
+                $array_atleti_players[] = $value;
+                $players_dorsal[] = $value[11];
+            }
+        }
+        //order the number of the players
+        sort($players_dorsal);
+
+        //create another array, ordering the players
+        for ($i=0; $i < count($array_atleti_players); $i++) { 
+            foreach($array_atleti_players as $player){
+                if($player[11] == $players_dorsal[$i]){
+                    $array_order_players[] = $player;
+                }
+            }
+        }      
 
         fclose($fp);
     ?>
