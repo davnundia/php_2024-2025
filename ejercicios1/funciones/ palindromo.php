@@ -26,7 +26,7 @@
                 array_push($array_right, $txt_no_space[$count]); 
             }
 
-            if ($left_str === $right_str) {
+            if ($array_left === $array_right) {
                 echo "The sentence is a palindrome";
             } else {
                 echo "The sentence is not a palindrome";
