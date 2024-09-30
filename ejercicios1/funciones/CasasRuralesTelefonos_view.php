@@ -1,3 +1,6 @@
+<?php
+include 'CasasRuralesTelefonos.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,13 +34,13 @@
             <td>Phone</td> 
         </tr>
         <?php
-            include 'CasasRuralesTelefonos.php';
+            
             foreach($array_correct_users as $data){
                 echo "<tr>";
-                    echo "<td>" . $data[0] . "</td>";
-                    echo "<td>" . $data[1] . "</td>";
-                    echo "<td>" . $data[3] . "</td>";
-                    echo "<td>" . $data[9] . "</td>";
+                    echo "<td>" . $data["id"] . "</td>";
+                    echo "<td>" . $data["localidad"] . "</td>";
+                    echo "<td>" . $data["nombre"] . "</td>";
+                    echo "<td>" . $data["telefono"] . "</td>";
                 echo "</tr>";
             }
             echo "<h2>" . "Discarted houses: "  . count($array_discard) . "</h2>";

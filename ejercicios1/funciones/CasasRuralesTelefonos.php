@@ -7,28 +7,40 @@
 </head>
 <body>
     <?php
+     $array_correct_users=[];
         $fp = fopen("casas_rurales.csv", "r");
         //recibe the data and keep it on array
         while(!feof($fp)) {
             $line = fgets($fp);
             $array_users[] = $line;
         }
+        
         //separate each field
-        array_shift($array_users);
         foreach($array_users as $values){   
             $array_users_new[] = explode(";", $values);
         }
-        //read the array and filtrate the data
-        foreach ($array_users_new as $users){
-            if(!$users[9] == ""){
-                $array_correct_users[] = $users;
-            }
-            else{
-                $array_discard[] = $users;
+
+        $header = array_shift($array_users_new);
+
+        //create the asociative array 
+        foreach($array_users_new as $row){ 
+            if(count($row) == count($header)){
+                $array_asociative[] = array_combine($header, $row);
             }
         }
-
+      
+        //read the array and filtrate the data
+        foreach ($array_asociative as $users){
+            if(empty($users["telefono"])){
+                $array_discard[] = $users;
+            }
+            else{
+                $array_correct_users[] = $users;
+            }
+        }
+        
         fclose($fp);
+        
     ?>
 </body>
 </html>
