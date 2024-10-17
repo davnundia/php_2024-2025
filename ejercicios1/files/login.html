@@ -22,18 +22,23 @@
 <body>
     <div id = "login">
         <h1>LOGIN</h1>
-        <form action="compruebaLogin.php">
-            <input class="form-control" type="text" name="user" aria-label="default input example" placeholder="User" required><br>
+        <form action="compruebaLogin.php" method="post">
+            <input class="form-control" type="text" name="user_true" aria-label="default input example" placeholder="User" required><br>
     
-            <input class="form-control" type="text" name="pass" aria-label="default input example" placeholder="Password" required><br>
+            <input class="form-control" type="text" name="pass_true" aria-label="default input example" placeholder="Password" required><br>
+
+            <input type="submit" value="send">
         </form>
     </div>
 
     <div id="sign">
-        <form action="signin.php"  method="post">
+        <form action="signin_view.html"  method="post">
             <button type="submit">Sign in</button>
-
+            
         </form>
+    </div>
+    <div>
+        <a href="session_destroy.php">BORRAR SESION</a>
     </div>
 
 </body>

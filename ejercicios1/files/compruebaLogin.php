@@ -7,8 +7,25 @@
 </head>
 <body>
     <?php
-        include "signin.php";
+        session_start();
+        include "session.php";
 
+        $user_true = $_REQUEST["user_true"];
+        $pass_true = $_REQUEST["pass_true"];
+
+        $exist = false;
+        foreach($_SESSION["session"] as $value){
+            if ($value["user"] == $user_true && $value["password"] == $pass_true){
+                $exist = true;
+            }
+        }
+
+        if($exist){
+            echo "Hello " . $user_true;
+        }
+        else{
+            echo "User or password incorrect";
+        }
         
     ?>
     
