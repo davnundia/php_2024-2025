@@ -43,7 +43,7 @@
             }
 
 
-            function mostrar(){
+            function show(){
                 echo $this->get_dni();
                 echo "<br>";
                 echo $this->get_name();
@@ -76,9 +76,9 @@
                 return $this->numfile;
             }
 
-            function mostrar(){
+            function show(){
                 echo "<br>";
-                parent::mostrar();
+                parent::show();
                 echo $this->get_numfile();
             }
 
@@ -87,8 +87,8 @@
         $student1 = new Student("98745616L", "Juan", "Juan@gmail.com", 1);
 
         $person1->set_email("david@gmail.com");
-        $person1->mostrar();
-        $student1->mostrar();
+        $person1->show();
+        $student1->show();
     ?>
     
 </body>
