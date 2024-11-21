@@ -20,12 +20,14 @@
 
         if (isset($_SESSION['user'])) {
             echo "La sesión está activa para el usuario: " . $_SESSION['user'];
+
+            $actionUrl = "index.php";
         } else {
             echo "No hay sesión activa.";
+            $actionUrl = "user.php";
         }
 
 
-        $actionUrl = $_SESSION["user"] === "user" ? "index.php" : "user.php";
 
     ?>
     <a href="session_destroy.php">Cerrar sesion</a>
