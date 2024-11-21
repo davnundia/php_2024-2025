@@ -46,12 +46,15 @@
                 }
             }
             $array_items = $_SESSION["buy_session"];
+            $total = 0;
             //print_r ($array_items);
             echo "<ul>";
             foreach ($array_items as $item) {
                 echo "<li>" . $item["nombre"] . " - " . $item["precio"] . " €" . "</li>";
+                $total += $item["precio"];
             }
             echo "</ul>";
+            echo $total;
         }
         else{
             echo "Nada comprado";
