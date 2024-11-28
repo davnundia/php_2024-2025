@@ -39,6 +39,7 @@
                 $this->email = $email;
             }
             function get_email() {
+                echo "hola";
                 return $this->email;
             }
 

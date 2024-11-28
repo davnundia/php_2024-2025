@@ -52,7 +52,7 @@
                 <?php
                     include 'bbdd.php';                
                         
-                    if(isset($_POST["submit"])){
+                    if(isset($_POST["submit"]) and $_SESSION["user"] == "user"){
         
                         $titulo = $_POST["titulo"];
                         $descripcion = $_POST["descripcion"];
@@ -63,15 +63,33 @@
                         $stmt->execute();
         
                     }
+                    else{
+                        
+                    }
                         
                     $stmt = $pdo->query("SELECT * FROM task");
 
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                         $url_update = "update.php?id=" . $row['id'];
-                        $actionUrl_update = $_SESSION["user"] === "user" ? $url_update : "user.php";
+                        if(isset($_SESSION["user"]) and ($_SESSION["user"] == "user")){
+                            $actionUrl_update = $url_update;
+                        }
+                        else{
+                            $actionUrl_update = "user.php";
+                        }
+                        
+                        //$actionUrl_update = $_SESSION["user"] === "user" ? $url_update : "user.php";
 
                         $url_delete = "delete.php?id=" . $row['id'];
-                        $actionUrl_delete = $_SESSION["user"] === "user" ? $url_delete : "user.php";
+                        if(isset($_SESSION["user"]) and ($_SESSION["user"] == "user")){
+                            $actionUrl_delete = $url_delete;
+                        }
+                        else{
+                            $actionUrl_delete = "user.php";
+                        }
+                        
+
+                        //$actionUrl_delete = $_SESSION["user"] === "user" ? $url_delete : "user.php";
                         
                         echo "<tr>";
                             echo "<td>" . $row['title'] . "</td>";
@@ -83,7 +101,6 @@
                             echo "</td>";
                         echo "</tr>";
                     }
-
                 ?>
 
             </table>
