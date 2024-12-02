@@ -1,7 +1,7 @@
 <?php
 require "/config/conexion.php";
 
-class Pelicula{
+class PeliculaModelo{
 
     private $pdo;
     public function __construct(){
@@ -30,7 +30,14 @@ class Pelicula{
         return $insercion->execute();
     }
 
-
+    public function update(){
+        $insercion = $this->pdo->prepare("UPDATE peliculas SET nombre=:nombre, genero=:genero, imagen=:imagen WHERE id=:id");
+        $insercion->bindParam(':id', $id);
+        $insercion->bindParam(':nombre', $nombre);
+        $insercion->bindParam(':genero', $genero);
+        $insercion->bindParam(':imagen', $imagen);
+        return $insercion->execute();
+    }
 
 
 }

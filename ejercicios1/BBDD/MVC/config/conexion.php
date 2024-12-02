@@ -1,17 +1,4 @@
 <?php
-    $dsn = 'mysql:dbname=Peliculas;host=peliculas';
-    $usuario = 'root';
-    $contraseña = '';
-    try {
-        $pdo = new PDO($dsn, $usuario, $contraseña);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } 
-    catch (PDOException $e) {
-        echo 'Falló la conexión: ' . $e->getMessage();
-    }
-?>
-
-<?php
     class Conexion {
         private $dsn;
         private $pdo;
