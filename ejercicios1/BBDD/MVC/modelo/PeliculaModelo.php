@@ -2,18 +2,16 @@
 require "/config/conexion.php";
 
 class PeliculaModelo{
-
     private $pdo;
+
     public function __construct(){
         $database = new Conexion();
         $this->pdo = $database->conectar();
     }
 
     public function mostrar(){
-        $consulta = "SELECT * FROM peliculas";
-        $registro = $this->pdo->prepare($query);
-        $registro->execute();
-        return $registro->fetchAll();
+        $registro = $this->pdo->prepare("SELECT * FROM peliculas");
+        return $registro->execute();
     }
 
     public function delete($id){    
@@ -30,7 +28,7 @@ class PeliculaModelo{
         return $insercion->execute();
     }
 
-    public function update(){
+    public function update($id, $nombre, $genero, $imagen){
         $insercion = $this->pdo->prepare("UPDATE peliculas SET nombre=:nombre, genero=:genero, imagen=:imagen WHERE id=:id");
         $insercion->bindParam(':id', $id);
         $insercion->bindParam(':nombre', $nombre);
