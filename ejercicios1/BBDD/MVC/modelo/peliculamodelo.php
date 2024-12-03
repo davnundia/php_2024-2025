@@ -1,5 +1,5 @@
 <?php
-require "/config/conexion.php";
+require "config/conexion.php";
 
 class PeliculaModelo{
     private $pdo;
@@ -36,8 +36,6 @@ class PeliculaModelo{
         $insercion->bindParam(':imagen', $imagen);
         return $insercion->execute();
     }
-
-
 }
 
 

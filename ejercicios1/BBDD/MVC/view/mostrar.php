@@ -17,7 +17,7 @@
             echo "<td>" . $pelicula['genero'] . "</td>";
             echo "<td>" . $pelicula['imagen'] . "</td>";
             echo "<td>";
-                echo "<a href=index.php?action=edit&id=" . $pelicula['id'] . ">Editar</a>";
+                echo "<a href=index.php?action=update&id=" . $pelicula['id'] . ">Editar</a>";
                 echo "<a href=index.php?action=delete&id=" . $pelicula['id'] . ">Eliminar</a>";
         echo "<tr>";
      }

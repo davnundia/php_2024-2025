@@ -1,7 +1,7 @@
 <?php
-    require_once "/modelo/PeliculaModelo.php";
+    require_once "modelo/peliculamodelo.php";
     class PeliculaController {
-        private $modelo_pelicula;
+        private $PeliculaModelo;
 
         public function __construct() {
             $this->PeliculaModelo = new PeliculaModelo();
@@ -17,7 +17,7 @@
                 $nombre = $_POST['nombre'];
                 $genero = $_POST['genero'];
                 $imagen = $_POST['imagen'];
-                $this->modelo_pelicula->insert($nombre, $genero, $imagen);
+                $this->PeliculaModelo->insert($nombre, $genero, $imagen);
                 header("Location: index.php");
             } 
             else {
@@ -27,20 +27,21 @@
 
         public function update($id) {
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $id = $_POST['id'];
                 $titulo = $_POST['nombre'];
                 $genero = $_POST['genero'];
                 $precio = $_POST['imagen'];
-                $this->modelo_pelicula->update($id, $nombre, $genero, $imagen);
+                $this->PeliculaModelo->update($id, $nombre, $genero, $imagen);
                 header("Location: index.php");
-                }
-                else{
-                    require "view/update.php";
-                }
+            }
+            else{
+                require "view/update.php";
+            }
                 
         }
 
         public function delete($id) {
-            $this->modelo_pelicula->delete($id);
+            $this->PeliculaModelo->delete($id);
             header("Location: index.php");
         }
             

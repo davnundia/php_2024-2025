@@ -1,16 +1,27 @@
 <?php
-    require_once "PeliculaController.php"; 
+    require_once 'controller/peliculacontroller.php'; 
 
     $controller = new PeliculaController();
-    
-    $action = isset($_GET['action']) ? $_GET['action'] : 'index';
 
-    $id = isset($_GET['id']) ? $_GET['id'] : null;
+    if(isset($_GET['action'])){
+        $action = $_GET['action'];
+    }
+    else{
+        $action = "index";
+    }
 
-    if (method_exists($controller, $action)) {
-        if ($id) {
+    if(isset($_GET['id'])){
+        $id = $_GET['id'];
+    }
+    else{
+        $id = null;
+    }
+
+    if(method_exists($controller, $action)){
+        if($id){
             $controller->$action($id);
-        } else {
+        }
+        else {
             $controller->$action();
         }
     }
