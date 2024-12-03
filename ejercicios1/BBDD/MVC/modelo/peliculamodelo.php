@@ -11,7 +11,8 @@ class PeliculaModelo{
 
     public function mostrar(){
         $registro = $this->pdo->prepare("SELECT * FROM peliculas");
-        return $registro->execute();
+        $registro->execute();
+        return $registro->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function delete($id){    
@@ -21,7 +22,7 @@ class PeliculaModelo{
     }
 
     public function insert($nombre,$genero,$imagen){
-        $insercion = $this->pdo->prepare("INSERT INTO peliculas(nombre,genero,imagen) VALUES (:titulo, :genero, :precio)");
+        $insercion = $this->pdo->prepare("INSERT INTO peliculas(nombre,genero,imagen) VALUES (:nombre, :genero, :imagen)");
         $insercion->bindParam(':nombre', $nombre);
         $insercion->bindParam(':genero', $genero);
         $insercion->bindParam(':imagen', $imagen);
@@ -35,6 +36,13 @@ class PeliculaModelo{
         $insercion->bindParam(':genero', $genero);
         $insercion->bindParam(':imagen', $imagen);
         return $insercion->execute();
+    }
+
+    public function getById($id){
+        $query = "SELECT * FROM peliculas WHERE id = $id";
+        $registro = $this->pdo->prepare($query);
+        $registro->execute();
+        return $registro->fetch();
     }
 }
 

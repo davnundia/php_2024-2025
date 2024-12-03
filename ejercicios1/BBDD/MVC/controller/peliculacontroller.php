@@ -27,14 +27,14 @@
 
         public function update($id) {
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                $id = $_POST['id'];
-                $titulo = $_POST['nombre'];
+                $nombre = $_POST['nombre'];
                 $genero = $_POST['genero'];
-                $precio = $_POST['imagen'];
+                $imagen = $_POST['imagen'];
                 $this->PeliculaModelo->update($id, $nombre, $genero, $imagen);
                 header("Location: index.php");
             }
             else{
+                $pelicula = $this->PeliculaModelo->getById($id);
                 require "view/update.php";
             }
                 

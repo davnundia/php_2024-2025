@@ -2,13 +2,13 @@
 
 <form method="POST" action="index.php?action=create">
     <label for="nombre">Nombre:</label>
-    <input type="text" name="nombre" required>
+    <input type="text" name="nombre">
     <br>
     <label for="genero">Género:</label>
-    <input type="text" name="genero" required>
+    <input type="text" name="genero">
     <br>
     <label for="imagen">Imagen:</label>
-    <input type="text" name="imagen" required>
+    <input type="text" name="imagen">
     <br>
     <button type="submit">Guardar</button>
 </form>
