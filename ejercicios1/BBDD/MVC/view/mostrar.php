@@ -15,8 +15,16 @@
 
 
 <a href="index.php?action=create">Agregar Pelicula</a>
-<a href="index.php?action=login">Registrarse</a>
-<a href="index.php?action=loginGet">Login</a>
+<?php
+session_start();
+if(isset($_SESSION["user"])){
+    echo $_SESSION["user"];
+}
+else{
+    echo '<a href="index.php?action=login">Registrarse</a>';
+    echo '<a href="index.php?action=loginGet">Login</a>';
+}
+?>
 
 <table>
     <tr>
@@ -33,7 +41,7 @@
             echo "<th scope='row'>" . $pelicula['id'] . "</th>";
             echo "<td>" . $pelicula['nombre'] . "</td>";
             echo "<td>" . $pelicula['genero'] . "</td>";
-            echo "<td>" . $pelicula['imagen'] . "</td>";
+            echo "<td><img src='" . $pelicula['imagen'] . "' style='width:100px;'></td>";
             echo "<td>";
                 echo "<a href=index.php?action=update&id=" . $pelicula['id'] . ">Editar</a>";
                 echo "<br>";

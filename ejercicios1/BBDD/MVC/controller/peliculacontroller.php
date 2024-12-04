@@ -63,17 +63,18 @@
                 $passGet = $_POST["pass"];
                 $usuario =  $this->PeliculaModelo->loginGet($userGet);
                 if($usuario && password_verify($passGet, $usuario['password'])){
+                    session_start();
                     $_SESSION["user"] = $userGet;
                     header("Location: index.php");
                 }
                 else{
-                    header("Location: view/loginGet.php");
+                    echo "INCORRECTO";
+                    require "view/loginget.php";
                 }  
             }
             else{
                 require "view/loginget.php";
             }
-
         }
 
     }
