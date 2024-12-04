@@ -44,8 +44,37 @@
             $this->PeliculaModelo->delete($id);
             header("Location: index.php");
         }
-            
-            
+
+        public function login() {
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $user = $_POST["user"];
+                $pass = $_POST["pass"];
+                $this->PeliculaModelo->login($user, $pass);
+                header("Location: index.php");
+            }
+            else{
+                require "view/login.php";
+            }
+        }
+
+        public function loginGet() {
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $userGet = $_POST["user"];
+                $passGet = $_POST["pass"];
+                $usuario =  $this->PeliculaModelo->loginGet($userGet);
+                if($usuario && password_verify($passGet, $usuario['password'])){
+                    $_SESSION["user"] = $userGet;
+                    header("Location: index.php");
+                }
+                else{
+                    header("Location: view/loginGet.php");
+                }  
+            }
+            else{
+                require "view/loginget.php";
+            }
+
+        }
 
     }
 ?>

@@ -44,6 +44,20 @@ class PeliculaModelo{
         $registro->execute();
         return $registro->fetch();
     }
+
+    public function login($user, $pass){
+        $insercion = $this->pdo->prepare("INSERT INTO usuarios(usuario, password) VALUES (:usuario, :password)");
+        $insercion->bindParam(':usuario', $user);
+        $insercion->bindParam(':password', password_hash($pass,PASSWORD_DEFAULT));
+        return $insercion->execute();
+    }
+
+    public function loginGet($userGet){
+        $insercion = $this->pdo->prepare("SELECT * FROM usuarios WHERE usuario = :usuario");
+        $insercion->bindParam(':usuario', $userGet);
+        $insercion->execute();
+        return $insercion -> fetch();
+    }
 }
 
 
